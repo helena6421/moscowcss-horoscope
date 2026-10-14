@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:host": "vite --host",
-    "build": "vue-tsc -b && vite build",
+    "dev:host": "node scripts/generate-cards.mjs && vite --host",
+    "generate-cards": "node scripts/generate-cards.mjs",
+    "build": "node scripts/generate-cards.mjs && vue-tsc -b && vite build",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",

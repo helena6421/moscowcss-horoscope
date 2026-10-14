@@ -3,7 +3,7 @@ import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useQuiz } from '@/composables/useQuiz'
 import { getPersonality } from '@/data/personalities'
-import { buildCardUrl } from '@/lib/urlBuilder'
+import { buildCardImageUrl } from '@/lib/urlBuilder'
 import { advanceQueue } from '@/domain/quiz/setQueue'
 import PersonalityCard from '@/components/personality/PersonalityCard.vue'
 import QRCodeBlock from '@/components/personality/QRCodeBlock.vue'
@@ -31,7 +31,7 @@ const personality = computed(() => {
 
 const cardUrl = computed(() => {
   if (!personality.value) return ''
-  return buildCardUrl(personality.value.id)
+  return buildCardImageUrl(personality.value.id)
 })
 
 const advanceDone = ref(false)

@@ -45,7 +45,7 @@ function startQuiz() {
           <span class="start__badge-sep">·</span>
           <span>8 CSS-личностей</span>
           <span class="start__badge-sep">·</span>
-          <span>0 правильных ответов</span>
+          <span>без правильных и неправильных</span>
         </div>
       </div>
 
@@ -242,7 +242,7 @@ function startQuiz() {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .start__property-stack {

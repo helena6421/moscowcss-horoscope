@@ -53,7 +53,7 @@ export const overflowHiddenSvg = `<svg viewBox="0 0 400 400" xmlns="http://www.w
 
   <!-- Guard legs -->
   <path d="M 288 288 Q 280 315 275 345" stroke="#0F172A" stroke-width="13" stroke-linecap="round" fill="none"/>
-  <path d="M 328" y1="288" Q 338 315 345 345" stroke="#0F172A" stroke-width="13" stroke-linecap="round" fill="none"/>
+  <path d="M 328 288 Q 338 315 345 345" stroke="#0F172A" stroke-width="13" stroke-linecap="round" fill="none"/>
   <ellipse cx="272" cy="348" rx="18" ry="9" fill="#1F1F1F"/>
   <ellipse cx="348" cy="348" rx="18" ry="9" fill="#1F1F1F"/>
 

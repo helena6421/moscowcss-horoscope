@@ -4,13 +4,13 @@ import { generateQRDataUrl } from '@/lib/qrCode'
 import { isQRUsable } from '@/lib/urlBuilder'
 
 interface Props {
+  /** Direct URL to the card SVG image */
   url: string
 }
 
 const props = defineProps<Props>()
 
 const qrDataUrl = ref<string>('')
-// Evaluate at runtime (not build-time) so it reacts to actual window.location
 const qrUsable = isQRUsable()
 
 async function generateQR() {
@@ -24,34 +24,39 @@ watch(() => props.url, generateQR)
 
 <template>
   <div class="qr-block">
-    <!-- QR code shown when URL is reachable from another device -->
+    <!-- QR code: opens SVG image directly on the phone -->
     <template v-if="qrUsable">
       <div class="qr-block__frame">
         <img
           v-if="qrDataUrl"
           :src="qrDataUrl"
-          alt="QR-код для открытия карточки на телефоне"
+          alt="QR-код — сканируй чтобы получить карточку на телефон"
           class="qr-block__image"
           width="160"
           height="160"
         />
         <div v-else class="qr-block__placeholder" aria-label="Генерация QR-кода..." />
       </div>
-      <p class="qr-block__caption">Забери свою карточку</p>
+      <p class="qr-block__caption">
+        Отсканируй — откроется картинка
+      </p>
+      <p class="qr-block__subcaption">
+        Сохрани долгим нажатием
+      </p>
     </template>
 
-    <!-- Dev warning: localhost can't be reached from phone -->
+    <!-- Dev warning: localhost is not reachable from a phone -->
     <template v-else>
       <div class="qr-block__dev-warning">
         <p class="qr-block__warn-title">⚠ QR недоступен</p>
-        <p>Сервер запущен на <code>localhost</code> — телефон его не найдёт.</p>
+        <p>Сервер на <code>localhost</code> — телефон его не видит.</p>
         <p class="qr-block__warn-fix">
-          Запусти:<br />
+          Запусти через:<br />
           <code>npm run dev:host</code><br />
-          и открой по LAN-адресу.
+          и открой по Network-адресу.
         </p>
         <a :href="url" class="qr-block__dev-link" target="_blank" rel="noopener">
-          Открыть на этом устройстве →
+          Открыть карточку здесь →
         </a>
       </div>
     </template>
@@ -63,10 +68,10 @@ watch(() => props.url, generateQR)
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
-/* ── QR code frame ──────────────────────────────────────────────────────────── */
+/* ── QR frame ── */
 .qr-block__frame {
   padding: 8px;
   background: white;
@@ -91,25 +96,31 @@ watch(() => props.url, generateQR)
 }
 
 @keyframes shimmer {
-  0% { background-position: 200% 0; }
+  0%   { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
 
 .qr-block__caption {
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   text-align: center;
 }
 
-/* ── Dev warning ────────────────────────────────────────────────────────────── */
+.qr-block__subcaption {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+/* ── Dev warning ── */
 .qr-block__dev-warning {
   background: rgba(0, 0, 0, 0.35);
-  border: 2px dashed rgba(255, 255, 255, 0.45);
+  border: 2px dashed rgba(255, 255, 255, 0.4);
   border-radius: var(--radius-sm);
-  padding: 0.9rem 1rem;
+  padding: 0.85rem 1rem;
   text-align: center;
   font-size: 0.78rem;
   line-height: 1.55;
@@ -142,7 +153,7 @@ watch(() => props.url, generateQR)
 
 .qr-block__dev-link {
   display: block;
-  margin-top: 0.25rem;
+  margin-top: 0.2rem;
   color: #FDE68A;
   font-weight: 700;
   text-decoration: underline;

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1080 1680">
+
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg_position-sticky" x1="0" y1="0" x2="1080" y2="1680"
+                    gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#FDE68A"/>
+    </linearGradient>
+
+    <!-- Halftone dots pattern -->
+    <pattern id="dots_position-sticky" x="0" y="0" width="26" height="26"
+             patternUnits="userSpaceOnUse">
+      <circle cx="13" cy="13" r="2" fill="rgba(255,255,255,0.07)"/>
+    </pattern>
+
+    <!-- Character drop-shadow filter -->
+    <filter id="char_shadow_position-sticky" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="5" dy="8" stdDeviation="12"
+                    flood-color="rgba(0,0,0,0.40)"/>
+    </filter>
+  </defs>
+
+  <!-- ① Background -->
+  <rect width="1080" height="1680" fill="url(#bg_position-sticky)"/>
+  <rect width="1080" height="1680" fill="url(#dots_position-sticky)"/>
+
+  <!-- ② Outer comic border -->
+  <rect x="16" y="16" width="1048" height="1648" rx="36"
+        fill="none" stroke="#1F1F1F" stroke-width="10"/>
+  <!-- Inner highlight ring -->
+  <rect x="28" y="28" width="1024" height="1624" rx="28"
+        fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2.5"/>
+
+  <!-- ③ Character illustration -->
+  <g filter="url(#char_shadow_position-sticky)">
+    <svg x="260" y="52"
+         width="560" height="560"
+         viewBox="0 0 400 400" overflow="visible">
+      
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="192" fill="#FFFBEB" stroke="#1F1F1F" stroke-width="6"/>
+
+  <!-- Page scroll lines (showing content flowing) -->
+  <rect x="45" y="60" width="310" height="280" rx="10" fill="#FEF3C7" stroke="#F59E0B" stroke-width="3"/>
+  <!-- Content lines -->
+  <line x1="68" y1="120" x2="330" y2="120" stroke="#D97706" stroke-width="2" stroke-dasharray="8,5" opacity="0.5"/>
+  <line x1="68" y1="145" x2="290" y2="145" stroke="#D97706" stroke-width="2" stroke-dasharray="8,5" opacity="0.4"/>
+  <line x1="68" y1="170" x2="310" y2="170" stroke="#D97706" stroke-width="2" stroke-dasharray="8,5" opacity="0.45"/>
+  <line x1="68" y1="270" x2="320" y2="270" stroke="#D97706" stroke-width="2" stroke-dasharray="8,5" opacity="0.3"/>
+  <line x1="68" y1="295" x2="275" y2="295" stroke="#D97706" stroke-width="2" stroke-dasharray="8,5" opacity="0.3"/>
+  <line x1="68" y1="320" x2="305" y2="320" stroke="#D97706" stroke-width="2" stroke-dasharray="8,5" opacity="0.3"/>
+
+  <!-- Sticky bar (top: 0) -->
+  <rect x="45" y="60" width="310" height="58" rx="10" fill="#F59E0B" stroke="#1F1F1F" stroke-width="4"/>
+  <!-- sticky label -->
+  <text x="80" y="97" font-size="16" font-family="monospace" font-weight="bold" fill="#1F1F1F">position: sticky; top: 0</text>
+  <!-- Sticky indicator dot -->
+  <circle cx="345" cy="89" r="8" fill="#FDE68A" stroke="#1F1F1F" stroke-width="2.5"/>
+
+  <!-- Character gripping the sticky bar edge -->
+  <!-- Hands gripping top of bar -->
+  <!-- Left hand -->
+  <rect x="118" y="52" width="36" height="28" rx="9" fill="#F59E0B" stroke="#1F1F1F" stroke-width="4"/>
+  <!-- Fingers left -->
+  <rect x="120" y="44" width="9" height="20" rx="4" fill="#F59E0B" stroke="#1F1F1F" stroke-width="3"/>
+  <rect x="132" y="42" width="9" height="22" rx="4" fill="#F59E0B" stroke="#1F1F1F" stroke-width="3"/>
+  <rect x="144" y="44" width="9" height="20" rx="4" fill="#F59E0B" stroke="#1F1F1F" stroke-width="3"/>
+
+  <!-- Right hand -->
+  <rect x="246" y="52" width="36" height="28" rx="9" fill="#F59E0B" stroke="#1F1F1F" stroke-width="4"/>
+  <!-- Fingers right -->
+  <rect x="248" y="44" width="9" height="20" rx="4" fill="#F59E0B" stroke="#1F1F1F" stroke-width="3"/>
+  <rect x="260" y="42" width="9" height="22" rx="4" fill="#F59E0B" stroke="#1F1F1F" stroke-width="3"/>
+  <rect x="272" y="44" width="9" height="20" rx="4" fill="#F59E0B" stroke="#1F1F1F" stroke-width="3"/>
+
+  <!-- Arms going down from hands to body -->
+  <path d="M 136 78 Q 145 120 155 155" stroke="#F59E0B" stroke-width="13" stroke-linecap="round" fill="none"/>
+  <path d="M 264 78 Q 258 120 248 155" stroke="#F59E0B" stroke-width="13" stroke-linecap="round" fill="none"/>
+
+  <!-- Body (dangling) -->
+  <ellipse cx="200" cy="235" rx="52" ry="68" fill="#F59E0B" stroke="#1F1F1F" stroke-width="5"/>
+
+  <!-- Legs (dangling/swinging) -->
+  <path d="M 172 298 Q 155 330 148 365" stroke="#F59E0B" stroke-width="13" stroke-linecap="round" fill="none"/>
+  <path d="M 228 298 Q 245 328 260 358" stroke="#F59E0B" stroke-width="13" stroke-linecap="round" fill="none"/>
+  <ellipse cx="145" cy="368" rx="17" ry="9" fill="#1F1F1F"/>
+  <ellipse cx="262" cy="361" rx="17" ry="9" fill="#1F1F1F"/>
+
+  <!-- Head (visible above bar, peeking) -->
+  <circle cx="200" cy="162" r="50" fill="#FDE68A" stroke="#1F1F1F" stroke-width="5"/>
+
+  <!-- Eyes (determined, slightly strained) -->
+  <circle cx="182" cy="155" r="11" fill="white" stroke="#1F1F1F" stroke-width="3"/>
+  <circle cx="218" cy="155" r="11" fill="white" stroke="#1F1F1F" stroke-width="3"/>
+  <circle cx="185" cy="157" r="5.5" fill="#1F1F1F"/>
+  <circle cx="221" cy="157" r="5.5" fill="#1F1F1F"/>
+  <circle cx="187" cy="154" r="2" fill="white"/>
+  <circle cx="223" cy="154" r="2" fill="white"/>
+
+  <!-- Strained eyebrows (gripping hard) -->
+  <path d="M 172 141 Q 183 135 194 140" stroke="#1F1F1F" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 207 140 Q 217 135 228 141" stroke="#1F1F1F" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- Determined smile -->
+  <path d="M 185 174 Q 200 183 215 174" stroke="#1F1F1F" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Sweat drops (effort) -->
+  <path d="M 240 145 Q 242 138 246 145 Q 242 150 240 145" fill="#93C5FD" stroke="#1F1F1F" stroke-width="1.5"/>
+  <path d="M 252 158 Q 254 151 258 158 Q 254 163 252 158" fill="#93C5FD" stroke="#1F1F1F" stroke-width="1.5"/>
+
+    </svg>
+  </g>
+
+  <!-- ④ CSS property pill -->
+  <rect x="56" y="644" width="968" height="100" rx="22"
+        fill="#1F1F1F"/>
+  <rect x="59" y="647" width="962" height="94" rx="19"
+        fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+  <text x="540" y="713.24"
+        text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="52" font-weight="bold"
+        fill="#FFFFFF" letter-spacing="1">position: sticky</text>
+
+  <!-- ⑤ Name -->
+  <text x="540" y="864"
+        text-anchor="middle"
+        font-family="'Arial Black','Arial Bold',Arial,sans-serif"
+        font-size="72" font-weight="900"
+        stroke="#1F1F1F" stroke-width="6" stroke-linejoin="round"
+        paint-order="stroke fill"
+        fill="#FFFFFF">«Цепкий напарник»</text>
+
+  <!-- ⑥ Description -->
+  <text x="540" y="920"
+        text-anchor="middle"
+        font-family="Arial,Helvetica,sans-serif"
+        font-size="44" line-height="66"
+        fill="rgba(255,255,255,0.95)">
+    <tspan x="540" dy="0">Сначала ты спокойно движешься со всеми.</tspan>
+      <tspan x="540" dy="66">Потом находишь свою позицию и держишь её,</tspan>
+      <tspan x="540" dy="66">пока позволяет контейнер. На тебя можно</tspan>
+      <tspan x="540" dy="66">положиться — если никто не намудрил с</tspan>
+      <tspan x="540" dy="66">overflow.</tspan>
+  </text>
+
+  <!-- ⑦ Superpower badge -->
+  <rect x="56" y="1306" width="968" height="196" rx="24"
+        fill="rgba(255,255,255,0.17)"
+        stroke="rgba(255,255,255,0.38)" stroke-width="2.5"/>
+  <!-- label -->
+  <text x="540" y="1358"
+        text-anchor="middle"
+        font-family="Arial,Helvetica,sans-serif"
+        font-size="26" font-weight="900" letter-spacing="5"
+        fill="rgba(255,255,255,0.68)">СУПЕРСИЛА</text>
+  <!-- superpower text -->
+  <text x="540" y="1402"
+        text-anchor="middle"
+        font-family="Arial,Helvetica,sans-serif"
+        font-size="34" font-weight="700"
+        fill="#FFFFFF">
+    <tspan x="540" dy="0">Оставаться на виду в нужный момент.</tspan>
+  </text>
+
+  <!-- ⑧ Footer bar -->
+  <rect x="0" y="1558" width="1080" height="122"
+        fill="rgba(0,0,0,0.30)"/>
+  <!-- Divider line -->
+  <line x1="112" y1="1560" x2="968" y2="1560"
+        stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
+  <text x="540" y="1635"
+        text-anchor="middle"
+        font-family="Arial,Helvetica,sans-serif"
+        font-size="32" font-weight="700" letter-spacing="5"
+        fill="rgba(255,255,255,0.80)">MoscowCSS  ·  #MoscowCSS</text>
+</svg>

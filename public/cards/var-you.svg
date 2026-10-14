@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1080 1680">
+
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg_var-you" x1="0" y1="0" x2="1080" y2="1680"
+                    gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#C4B5FD"/>
+    </linearGradient>
+
+    <!-- Halftone dots pattern -->
+    <pattern id="dots_var-you" x="0" y="0" width="26" height="26"
+             patternUnits="userSpaceOnUse">
+      <circle cx="13" cy="13" r="2" fill="rgba(255,255,255,0.07)"/>
+    </pattern>
+
+    <!-- Character drop-shadow filter -->
+    <filter id="char_shadow_var-you" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="5" dy="8" stdDeviation="12"
+                    flood-color="rgba(0,0,0,0.40)"/>
+    </filter>
+  </defs>
+
+  <!-- ① Background -->
+  <rect width="1080" height="1680" fill="url(#bg_var-you)"/>
+  <rect width="1080" height="1680" fill="url(#dots_var-you)"/>
+
+  <!-- ② Outer comic border -->
+  <rect x="16" y="16" width="1048" height="1648" rx="36"
+        fill="none" stroke="#1F1F1F" stroke-width="10"/>
+  <!-- Inner highlight ring -->
+  <rect x="28" y="28" width="1024" height="1624" rx="28"
+        fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2.5"/>
+
+  <!-- ③ Character illustration -->
+  <g filter="url(#char_shadow_var-you)">
+    <svg x="260" y="52"
+         width="560" height="560"
+         viewBox="0 0 400 400" overflow="visible">
+      
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="192" fill="#F5F3FF" stroke="#1F1F1F" stroke-width="6"/>
+
+  <!-- Orbiting color swatches -->
+  <circle cx="88" cy="112" r="22" fill="#EF4444" stroke="#1F1F1F" stroke-width="3.5"/>
+  <circle cx="312" cy="112" r="22" fill="#3B82F6" stroke="#1F1F1F" stroke-width="3.5"/>
+  <circle cx="60" cy="218" r="18" fill="#22C55E" stroke="#1F1F1F" stroke-width="3"/>
+  <circle cx="340" cy="218" r="18" fill="#F59E0B" stroke="#1F1F1F" stroke-width="3"/>
+  <circle cx="100" cy="320" r="15" fill="#EC4899" stroke="#1F1F1F" stroke-width="2.5"/>
+  <circle cx="300" cy="320" r="15" fill="#06B6D4" stroke="#1F1F1F" stroke-width="2.5"/>
+  <circle cx="200" cy="50" r="14" fill="#8B5CF6" stroke="#1F1F1F" stroke-width="2.5"/>
+
+  <!-- Connecting lines (conducting) -->
+  <line x1="200" y1="200" x2="88" y2="112" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.5"/>
+  <line x1="200" y1="200" x2="312" y2="112" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.5"/>
+  <line x1="200" y1="200" x2="60" y2="218" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.4"/>
+  <line x1="200" y1="200" x2="340" y2="218" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.4"/>
+  <line x1="200" y1="200" x2="200" y2="50" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.4"/>
+
+  <!-- Variable labels on swatches -->
+  <text x="88" y="117" font-size="10" font-family="monospace" fill="white" text-anchor="middle" font-weight="bold">--red</text>
+  <text x="312" y="117" font-size="10" font-family="monospace" fill="white" text-anchor="middle" font-weight="bold">--blue</text>
+  <text x="60" y="223" font-size="9" font-family="monospace" fill="white" text-anchor="middle" font-weight="bold">--grn</text>
+  <text x="340" y="223" font-size="9" font-family="monospace" fill="white" text-anchor="middle" font-weight="bold">--ylw</text>
+
+  <!-- Body (elegant, conductor stance) -->
+  <ellipse cx="200" cy="268" rx="48" ry="62" fill="#8B5CF6" stroke="#1F1F1F" stroke-width="5"/>
+  <!-- Conductor jacket detail -->
+  <path d="M 175 248 Q 200 268 225 248" fill="#6D28D9" stroke="#1F1F1F" stroke-width="2"/>
+  <path d="M 193 248 L 207 248 L 205 295 L 195 295 Z" fill="#C4B5FD" stroke="#1F1F1F" stroke-width="1.5"/>
+
+  <!-- Baton in right hand -->
+  <path d="M 246 250 Q 295 215 325 185" stroke="#FDE68A" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <circle cx="327" cy="183" r="10" fill="#FDE68A" stroke="#1F1F1F" stroke-width="3"/>
+
+  <!-- Right arm -->
+  <path d="M 245 255 Q 270 238 295 220" stroke="#8B5CF6" stroke-width="13" stroke-linecap="round" fill="none"/>
+
+  <!-- Left arm (gesturing) -->
+  <path d="M 155 258 Q 118 242 88 235" stroke="#8B5CF6" stroke-width="13" stroke-linecap="round" fill="none"/>
+  <circle cx="84" cy="233" r="10" fill="#1F1F1F"/>
+
+  <!-- Legs -->
+  <path d="M 172 326 Q 160 352 150 378" stroke="#8B5CF6" stroke-width="13" stroke-linecap="round" fill="none"/>
+  <path d="M 228 326 Q 242 352 252 378" stroke="#8B5CF6" stroke-width="13" stroke-linecap="round" fill="none"/>
+  <ellipse cx="147" cy="381" rx="18" ry="9" fill="#1F1F1F"/>
+  <ellipse cx="255" cy="381" rx="18" ry="9" fill="#1F1F1F"/>
+
+  <!-- Head -->
+  <circle cx="200" cy="200" r="50" fill="#C4B5FD" stroke="#1F1F1F" stroke-width="5"/>
+
+  <!-- Eyes (wise, serene) -->
+  <circle cx="183" cy="194" r="11" fill="white" stroke="#1F1F1F" stroke-width="3"/>
+  <circle cx="217" cy="194" r="11" fill="white" stroke="#1F1F1F" stroke-width="3"/>
+  <circle cx="186" cy="196" r="5.5" fill="#4C1D95"/>
+  <circle cx="220" cy="196" r="5.5" fill="#4C1D95"/>
+  <circle cx="188" cy="193" r="2" fill="white"/>
+  <circle cx="222" cy="193" r="2" fill="white"/>
+
+  <!-- Elegant eyebrows (arched) -->
+  <path d="M 173 180 Q 183 174 194 179" stroke="#4C1D95" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 207 179 Q 217 174 228 180" stroke="#4C1D95" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Knowing smile -->
+  <path d="M 186 213 Q 200 223 214 213" stroke="#4C1D95" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Crown/conductor hat -->
+  <path d="M 155 185 Q 200 158 245 185" fill="#6D28D9" stroke="#1F1F1F" stroke-width="3.5"/>
+  <rect x="148" y="183" width="104" height="14" rx="7" fill="#6D28D9" stroke="#1F1F1F" stroke-width="3"/>
+  <!-- Crown points -->
+  <path d="M 155 185 L 148 162 L 168 178 L 200 158 L 232 178 L 252 162 L 245 185 Z" fill="#8B5CF6" stroke="#1F1F1F" stroke-width="3"/>
+  <circle cx="200" cy="158" r="5" fill="#FDE68A" stroke="#1F1F1F" stroke-width="2"/>
+  <circle cx="168" cy="178" r="4" fill="#FDE68A" stroke="#1F1F1F" stroke-width="1.5"/>
+  <circle cx="232" cy="178" r="4" fill="#FDE68A" stroke="#1F1F1F" stroke-width="1.5"/>
+
+    </svg>
+  </g>
+
+  <!-- ④ CSS property pill -->
+  <rect x="56" y="644" width="968" height="100" rx="22"
+        fill="#1F1F1F"/>
+  <rect x="59" y="647" width="962" height="94" rx="19"
+        fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+  <text x="540" y="713.24"
+        text-anchor="middle"
+        font-family="'Courier New',Courier,monospace"
+        font-size="52" font-weight="bold"
+        fill="#FFFFFF" letter-spacing="1">var(--you)</text>
+
+  <!-- ⑤ Name -->
+  <text x="540" y="864"
+        text-anchor="middle"
+        font-family="'Arial Black','Arial Bold',Arial,sans-serif"
+        font-size="72" font-weight="900"
+        stroke="#1F1F1F" stroke-width="6" stroke-linejoin="round"
+        paint-order="stroke fill"
+        fill="#FFFFFF">«Источник истины»</text>
+
+  <!-- ⑥ Description -->
+  <text x="540" y="920"
+        text-anchor="middle"
+        font-family="Arial,Helvetica,sans-serif"
+        font-size="44" line-height="66"
+        fill="rgba(255,255,255,0.95)">
+    <tspan x="540" dy="0">Ты один раз выбираешь цвет — и весь</tspan>
+      <tspan x="540" dy="66">проект переодевается. Любишь, когда всё</tspan>
+      <tspan x="540" dy="66">связано. Особенно когда никто не притащил</tspan>
+      <tspan x="540" dy="66">в эту гармонию #ff0000 прямо в компонент.</tspan>
+  </text>
+
+  <!-- ⑦ Superpower badge -->
+  <rect x="56" y="1240" width="968" height="196" rx="24"
+        fill="rgba(255,255,255,0.17)"
+        stroke="rgba(255,255,255,0.38)" stroke-width="2.5"/>
+  <!-- label -->
+  <text x="540" y="1292"
+        text-anchor="middle"
+        font-family="Arial,Helvetica,sans-serif"
+        font-size="26" font-weight="900" letter-spacing="5"
+        fill="rgba(255,255,255,0.68)">СУПЕРСИЛА</text>
+  <!-- superpower text -->
+  <text x="540" y="1336"
+        text-anchor="middle"
+        font-family="Arial,Helvetica,sans-serif"
+        font-size="34" font-weight="700"
+        fill="#FFFFFF">
+    <tspan x="540" dy="0">Менять настроение целой системы из одной точки.</tspan>
+  </text>
+
+  <!-- ⑧ Footer bar -->
+  <rect x="0" y="1492" width="1080" height="188"
+        fill="rgba(0,0,0,0.30)"/>
+  <!-- Divider line -->
+  <line x1="112" y1="1494" x2="968" y2="1494"
+        stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
+  <text x="540" y="1602"
+        text-anchor="middle"
+        font-family="Arial,Helvetica,sans-serif"
+        font-size="32" font-weight="700" letter-spacing="5"
+        fill="rgba(255,255,255,0.80)">MoscowCSS  ·  #MoscowCSS</text>
+</svg>
