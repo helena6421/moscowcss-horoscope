@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  workflow_dispatch:        # ручной запуск из интерфейса GitHub
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -26,29 +26,23 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate card SVGs
-        run: node scripts/generate-cards.mjs
-
       - name: Build
-        run: vue-tsc -b && vite build
+        run: npm run build
         env:
           GITHUB_PAGES: 'true'
           VITE_PUBLIC_URL: 'https://helena6421.github.io/moscowcss-horoscope'
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      - uses: actions/configure-pages@v4
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
-      - name: Deploy to GitHub Pages
+      - uses: actions/deploy-pages@v4
         id: deployment
-        uses: actions/deploy-pages@v4
